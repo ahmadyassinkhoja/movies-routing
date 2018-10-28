@@ -1,4 +1,5 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
+import { MoviesService } from './movies.service';
 
 
 @Component({
@@ -7,48 +8,25 @@ import { Component, OnInit, DoCheck } from '@angular/core';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit, DoCheck {
-   
-  movies = [
-    {
-      name: 'Harry Potter',
-      genre: 'Magic',
-      length: 126,
-      image: '../../assets/images/harry.png',
-    },
-    {
-      name: 'Naruto',
-      genre: 'Action',
-      length: 150,
-      image:  '../../assets/images/naruto.png',
-    },
-    {
-      name: 'One Piece',
-      genre: 'Adventure',
-      length: 175,
-      image:  '../../assets/images/lofi.png',
-    },
-    
-  ]
+  ids = 4
+  movies
 
-  constructor() { }
+  constructor(private movieService: MoviesService) { }
 
   ngOnInit() {
-    // this.movies = this.movieService.movies
-    
     // Getting data from service
-   
+    this.movies = this.movieService.movies
   }
 
   ngDoCheck(){
   }
-
-
 
   addMovie(title,genre,length,photo) {
 
     console.log(photo.files[0].name)
 
     let newMovie = {
+      id: this.ids++,
       name: title.value,
       genre: genre.value,
       length: length.value,

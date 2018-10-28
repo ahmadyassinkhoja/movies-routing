@@ -5,5 +5,7 @@
     <p class="card-text">Genre: {{ movie.genre }} </p>
     <p class="badge badge-primary" style="float: right;"> {{ movie.length }} </p>
     <button (click)="requestDelete(movie)" class="btn-danger btn-lg "style="position: absolute; right: 0; top: 0; cursor: pointer; "> X </button>
+
+    <a [routerLink]="['/movie/', movie.id]"> Edit </a>
   </div>
 </div>

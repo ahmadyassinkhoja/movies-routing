@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { MovieComponent } from './movie/movie.component';
 import { MoviesComponent } from './movies/movies.component';
 
+import { AppRoutingModule } from './app-routing.module'
+
 
 
 @NgModule({
@@ -20,6 +22,7 @@ import { MoviesComponent } from './movies/movies.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
